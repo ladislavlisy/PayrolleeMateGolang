@@ -41,11 +41,11 @@ func (s MonthPeriod) CompareTo(other MonthPeriod) int {
 	return (int(s.code) - int(other.code))
 }
 
-func (s MonthPeriod) Gt(other MonthPeriod) bool {
+func (s MonthPeriod) OpGt(other MonthPeriod) bool {
 	return (s.CompareTo(other) > 0)
 }
 
-func (s MonthPeriod) Lt(other MonthPeriod) bool {
+func (s MonthPeriod) OpLt(other MonthPeriod) bool {
 	return (s.CompareTo(other) < 0)
 }
 

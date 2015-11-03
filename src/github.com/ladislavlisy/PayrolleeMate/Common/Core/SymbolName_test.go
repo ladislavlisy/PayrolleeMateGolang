@@ -29,7 +29,7 @@ var _ = Describe("Core", func() {
 
 			test_symbol_two := Core.NewSymbolName(test_symbol_code5001, "Terminal Symbol")
 
-			Expect(test_symbol_two.Gt(*test_symbol_one)).To(BeTrue())
+			Expect(test_symbol_two.OpGt(*test_symbol_one)).To(BeTrue())
 		})
 
 		It("should Should_Compare_Different_Symbols_AsLess", func() {
@@ -37,7 +37,7 @@ var _ = Describe("Core", func() {
 
 			test_symbol_two := Core.NewSymbolName(test_symbol_code5001, "Terminal Symbol")
 
-			Expect(test_symbol_one.Lt(*test_symbol_two)).To(BeTrue())
+			Expect(test_symbol_one.OpLt(*test_symbol_two)).To(BeTrue())
 		})
 	})
 })

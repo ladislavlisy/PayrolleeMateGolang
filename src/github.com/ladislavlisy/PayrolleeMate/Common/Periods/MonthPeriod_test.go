@@ -38,7 +38,7 @@ var _ = Describe("Periods", func() {
 
 			Expect(test_period_one.Equals(*test_period_two)).To(BeFalse())
 
-			Expect(test_period_one.Lt(*test_period_two)).To(BeTrue())
+			Expect(test_period_one.OpLt(*test_period_two)).To(BeTrue())
 		})
 		It("should Compare_Different_Periods_SameYear_AsLess", func() {
 			test_period_one := Periods.NewMonthPeriod (test_period_code_Jan)
@@ -47,7 +47,7 @@ var _ = Describe("Periods", func() {
 
 			Expect(test_period_one.Equals(*test_period_two)).To(BeFalse())
 
-			Expect(test_period_two.Gt(*test_period_one)).To(BeTrue())
+			Expect(test_period_two.OpGt(*test_period_one)).To(BeTrue())
 		})
 		It("should Compare_Different_Periods_SameMonth_AsGreater", func() {
 			test_period_one := Periods.NewMonthPeriod (test_period_code_Jan)
@@ -56,7 +56,7 @@ var _ = Describe("Periods", func() {
 
 			Expect(test_period_one.Equals(*test_period_two)).To(BeFalse())
 
-			Expect(test_period_one.Lt(*test_period_two)).To(BeTrue())
+			Expect(test_period_one.OpLt(*test_period_two)).To(BeTrue())
 		})
 		It("should Compare_Different_Periods_SameMonth_AsLess", func() {
 			test_period_one := Periods.NewMonthPeriod (test_period_code_Jan)
@@ -65,7 +65,7 @@ var _ = Describe("Periods", func() {
 
 			Expect(test_period_one.Equals(*test_period_two)).To(BeFalse())
 
-			Expect(test_period_two.Gt(*test_period_one)).To(BeTrue())
+			Expect(test_period_two.OpGt(*test_period_one)).To(BeTrue())
 		})
 		It("should Compare_Different_Periods_DifferentYear_AsGreater", func() {
 			test_period_one := Periods.NewMonthPeriod (test_period_code_402)
@@ -74,7 +74,7 @@ var _ = Describe("Periods", func() {
 
 			Expect(test_period_one.Equals(*test_period_two)).To(BeFalse())
 
-			Expect(test_period_one.Lt(*test_period_two)).To(BeTrue())
+			Expect(test_period_one.OpLt(*test_period_two)).To(BeTrue())
 		})
 		It("should Compare_Different_Periods_DifferentYear_AsLess", func() {
 			test_period_one := Periods.NewMonthPeriod (test_period_code_402)
@@ -83,7 +83,7 @@ var _ = Describe("Periods", func() {
 
 			Expect(test_period_one.Equals(*test_period_two)).To(BeFalse())
 
-			Expect(test_period_two.Gt(*test_period_one)).To(BeTrue())
+			Expect(test_period_two.OpGt(*test_period_one)).To(BeTrue())
 		})
 		It("should Return_Periods_Year_And_Month_2014_01", func() {
 			test_period_one := Periods.NewMonthPeriod (test_period_code_Jan)
